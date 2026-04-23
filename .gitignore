@@ -1,0 +1,18 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local datasets and archives
+data/
+
+# Generated firmware/build outputs
+*.elf
+*.o
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+*~
+.~lock.*
