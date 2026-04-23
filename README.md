@@ -7,6 +7,7 @@ The project is intended for simulation and architecture exploration. Performance
 ## Project Structure
 
 - `train_catdog.py`: trains the cat/dog classifier.
+- `run_benchmark.sh`: starts the benchmark workflow.
 - `firmware/`: embedded inference code and support files for the RV32IM target.
 - `renode/`: Renode platform description and run scripts.
 - `scripts/`: dataset export, benchmarking, and verification helpers.
@@ -37,10 +38,10 @@ Export an evaluation dataset:
 python scripts/export_eval_dataset.py --count 500
 ```
 
-Run a benchmark point:
+Run the benchmark:
 
 ```bash
-python scripts/benchmark_renode.py --dataset-count 100 --macs-per-cycle 4
+./run_benchmark.sh
 ```
 
 Verify generated benchmark artifacts:
@@ -54,12 +55,3 @@ python scripts/verify_benchmark_consistency.py
 - `venv/` and local dataset files are excluded from git.
 - The included benchmark files under `results/` are generated artifacts from previous runs.
 - The repository currently keeps the trained checkpoint and selected benchmark outputs because they are part of the project deliverables.
-
-## GitHub Upload
-
-After creating an empty GitHub repository, push with:
-
-```bash
-git remote add origin https://github.com/meshal-1202/YOUR_REPO.git
-git push -u origin main
-```
